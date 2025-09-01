@@ -6,6 +6,13 @@ class Task
     private string $title;
     private bool $isDone;
 
+    // SETTER TITLE
+
+    public function setTitle($title)
+    {
+        $this->title = $title;
+    }
+
     // GETTER TITLE
     public function getTitle()
     {
@@ -13,11 +20,19 @@ class Task
     }
 
 
+    // SETTER ISDONE
+
+    public function setisDone($isDone)
+    {
+        $this->isDone = $isDone;
+    }
+
     // GETTER ISDONE
-    public function isDone()
+    public function getisDone()
     {
         return $this->isDone;
     }
+
 
 
     // Toggle pour inverser la valeur de isDone (si c'est true => false et l'inverse)
@@ -45,7 +60,7 @@ class Task
     // CONSTRUCT
     public function __construct(string $title)
     {
-        $this->getTitle($title);
+        $this->setTitle($title);
         $this->isDone = false;
     }
 }

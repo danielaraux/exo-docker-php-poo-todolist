@@ -11,10 +11,12 @@ if (!isset($_SESSION['tasks'])) {
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     if (isset($_POST['action'])) {
+        echo 'GNEEEEEE';
     }
 }
 
 var_dump($_POST);
+var_dump($_GET);
 ?>
 
 
@@ -56,10 +58,10 @@ var_dump($_POST);
 
 
 
-        <form method="POST" class="m-2 d-block">
+        <form action="action.php?action=add" method="POST" class="m-2 d-block">
             <div class="m-2 container mx-auto">
                 <label for="action" class="form-label mt-2">Saisissez le titre d'une tâche</label>
-                <input type="text" name="title" class="form-control" placeholder="Entrez un titre..." id="title">
+                <input type="text" for="action" name="title" class="form-control" placeholder="Entrez un titre..." id="title">
                 <button type="submit" class="btn btn-secondary mt-3">Envoyer</button>
             </div>
         </form>
