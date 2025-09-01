@@ -1,7 +1,7 @@
 services:
   web:
     image: php:8.2-apache
-    container_name: php-apache-training
+    container_name: php-apache-docker-php-poo-todolist
     build:
       context: .
       dockerfile: Dockerfile
@@ -23,7 +23,7 @@ services:
     build:
       context: .
       dockerfile: docker/Dockerfile.mysql
-    container_name: mysql-db-training
+    container_name: mysql-db-docker-php-poo-todolist
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: root
@@ -38,7 +38,7 @@ services:
 
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
-    container_name: phpmyadmin-training
+    container_name: phpmyadmin-docker-php-poo-todolist
     depends_on:
       - db
     ports:
@@ -46,7 +46,7 @@ services:
     environment:
       PMA_HOST: db
       MYSQL_ROOT_PASSWORD: root
-      UPLOAD_LIMIT: 64M 
+      UPLOAD_LIMIT: 64M
     networks:
       - app-network
 
