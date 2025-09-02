@@ -46,7 +46,7 @@ class Task
     }
 
 
-    // Condition état visuel tâche
+    // Méthode appelée automatiquement lors d'un echo
     public function __toString()
     {
         if ($this->isDone == true) {

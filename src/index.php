@@ -8,15 +8,6 @@ if (!isset($_SESSION['tasks'])) {
     $_SESSION['tasks'] = [];
 }
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-
-    if (isset($_POST['action'])) {
-        echo 'GNEEEEEE';
-    }
-}
-
-var_dump($_POST);
-var_dump($_GET);
 ?>
 
 
@@ -26,53 +17,40 @@ var_dump($_GET);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Index.php</title>
-    <link rel="stylesheet" href="assets/css/style.css">
+    <title>Accueil</title>
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body>
     <header>
-        <nav class="navbar navbar-expand-lg bg-body-secondary">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="#">To Do List</a>
-                <button class="navbar-toggler text-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Home</a>
-                        </li>
-
-                    </ul>
-
-                </div>
+        <nav class="navbar bg-success">
+            <div class="mx-auto">
+                <h1 class="text-light">Not to do list</h1>
             </div>
         </nav>
     </header>
 
     <main class="text-center">
 
-        <h1>Index.php</h1>
-
-
-
-        <form action="action.php?action=add" method="POST" class="m-2 d-block">
+        <form action="action.php?action=add" method="POST" class="m-5 d-block">
             <div class="m-2 container mx-auto">
-                <label for="action" class="form-label mt-2">Saisissez le titre d'une tâche</label>
-                <input type="text" for="action" name="title" class="form-control" placeholder="Entrez un titre..." id="title">
-                <button type="submit" class="btn btn-secondary mt-3">Envoyer</button>
+                <label for="action" class="form-label mt-2"><b>Saisissez le titre d'une tâche</b></label>
+                <input type="text" for="action" name="title" class="form-control" placeholder="Entrez un titre..." id="title" required>
+                <button type="submit" class="btn btn-success mt-3 w-100">Envoyer</button>
             </div>
         </form>
 
+        <a href="todo.php" class="text-decoration-none"><b>Afficher la liste des tâches complète</b></a>
         <!-- Pour l'instant, je récupère ma saisie dans $_POST -->
 
     </main>
 
 
-    <footer class="text-center bg-dark fixed-bottom">
-        <h4 class="text-light">FOOTER de la ToDoList</h4>
+    <footer class="text-center bg-dark fixed-bottom p-2">
+        <h4 class="text-light">NotToDoList© 2025.</h4>
 
     </footer>
 
