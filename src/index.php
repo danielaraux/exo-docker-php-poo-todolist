@@ -38,7 +38,7 @@ if (!isset($_SESSION['tasks'])) {
         <form action="action.php?action=add" method="POST" class="m-5 d-block">
             <div class="m-2 container mx-auto">
                 <label for="action" class="form-label mt-2"><b>Saisissez le titre d'une tâche</b></label>
-                <input type="text" for="action" name="title" class="form-control" placeholder="Entrez un titre..." id="title" required>
+                <input type="text" for="action" name="title" class="form-control" placeholder="Entrez un titre..." id="title" maxlength="30" required>
                 <button type="submit" class="btn btn-success mt-3 w-100">Envoyer</button>
             </div>
         </form>

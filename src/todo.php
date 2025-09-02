@@ -1,6 +1,7 @@
 <?php
 require_once 'classes/task.php';
 session_start();
+
 ?>
 
 <!DOCTYPE html>
@@ -34,12 +35,12 @@ session_start();
         <hr>
 
 
-        <?php if (!empty($_SESSION['tasks'])): ?>
+        <?php if (!empty($_SESSION['tasks'])) { ?>
 
             <!-- index en clé pour identifier ses tâches, qu'on attribue à $task -->
-            <?php foreach (array_reverse($_SESSION['tasks'], true) as $index => $task): ?>
+            <?php foreach (array_reverse($_SESSION['tasks'], true) as $index => $task) { ?>
                 <div class="d-flex align-items-center justify-content-between container mx-auto">
-                    <div class=""><?= $task ?></div>
+                    <div class="divTitle text-start "><?= $task ?></div>
 
                     <div class="d-flex align-items-center">
                         <form action="action.php?action=toggle" method="POST" class="d-block">
@@ -53,15 +54,22 @@ session_start();
                         </form>
                     </div>
                 </div>
-            <?php endforeach ?>
-        <?php endif ?>
+            <?php } ?>
+
+        <?php } else { ?>
+            <!-- Condition pour afficher un message mentionnant qu'il n'y a aucune tâche -->
+            <div class="text-center mt-4">
+                <p><b>Aucune tâche pour le moment.</b></p>
+            </div>
+        <?php } ?>
+
 
 
     </main>
 
 
     <footer class="text-center bg-dark p-2">
-        <h5 class="text-light">FOOTER de la NotToDoList</h5>
+        <h4 class="text-light">NotToDoList© 2025.</h4>
 
     </footer>
 

@@ -32,7 +32,7 @@ if (isset($_GET['action']) && $_GET['action'] == "toggle") {
 }
 
 // Pour le delete de la tâche
-if (isset($_GET['action']) && $_GET['action'] == "delete") {
+if (isset($_GET['action']) && $_GET['action'] == "delete") { // J'efface l'élément à l'aide de son index, j'utilise la fonction unset()
     if (isset($_POST['index']) && isset($_SESSION['tasks'][$_POST['index']])) {
         unset($_SESSION['tasks'][$_POST['index']]);
         header("Location: todo.php");
