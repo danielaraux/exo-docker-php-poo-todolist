@@ -37,7 +37,7 @@ session_start();
         <?php if (!empty($_SESSION['tasks'])): ?>
 
             <!-- index en clé pour identifier ses tâches, qu'on attribue à $task -->
-            <?php foreach ($_SESSION['tasks'] as $index => $task): ?>
+            <?php foreach (array_reverse($_SESSION['tasks'], true) as $index => $task): ?>
                 <div class="d-flex align-items-center justify-content-between container mx-auto">
                     <div class=""><?= $task ?></div>
 
