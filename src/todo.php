@@ -18,9 +18,9 @@ session_start();
 
 <body>
     <header>
-        <nav class="navbar bg-success">
+        <nav class="navbar bg-dark">
             <div class="mx-auto">
-                <h1 class="text-light">Not to do list</h1>
+                <h1 class="text-white">Not to do list</h1>
             </div>
         </nav>
     </header>
@@ -29,7 +29,7 @@ session_start();
 
 
 
-        <button class="btn btn-success mb-2 mt-3"><a href="index.php" class="text-light text-decoration-none">Retour à la création de tâches</a></button>
+        <button class="btn btn-light mb-2 mt-3"><a href="index.php" class="text-dark text-decoration-none">Retour à la création de tâches</a></button>
         <hr>
         <h2 class="m-3">Liste complète des tâches</h2>
         <hr>
@@ -40,7 +40,7 @@ session_start();
             <!-- index en clé pour identifier ses tâches, qu'on attribue à $task -->
             <?php foreach (array_reverse($_SESSION['tasks'], true) as $index => $task) { ?>
                 <div class="d-flex align-items-center justify-content-between container mx-auto">
-                    <div class="divTitle text-start "><?= $task ?></div>
+                    <div class="divTitle card text-start "><b><?= $task ?></b></div>
 
                     <div class="d-flex align-items-center">
                         <form action="action.php?action=toggle" method="POST" class="d-block">

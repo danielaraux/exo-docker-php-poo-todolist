@@ -26,7 +26,7 @@ if (!isset($_SESSION['tasks'])) {
 
 <body>
     <header>
-        <nav class="navbar bg-success">
+        <nav class="navbar bg-dark">
             <div class="mx-auto">
                 <h1 class="text-light">Not to do list</h1>
             </div>
@@ -43,7 +43,7 @@ if (!isset($_SESSION['tasks'])) {
             </div>
         </form>
 
-        <a href="todo.php" class="text-decoration-none"><b>Afficher la liste des tâches complète</b></a>
+        <button class="btn btn-success"><a href="todo.php" class="text-decoration-none text-light"><b>Afficher la liste des tâches complète</b></a></button>
         <!-- Pour l'instant, je récupère ma saisie dans $_POST -->
 
     </main>
